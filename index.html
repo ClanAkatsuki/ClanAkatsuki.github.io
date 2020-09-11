@@ -22,24 +22,103 @@
     <title>Akatsuki</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#">História</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Ramificações</a>
-        </li>
-        <a class="navbar-brand" href="#">
-            <img src="img/logo.png" alt="Logo" style="width:40px;">
-        </a>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sistemas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Regiões</a>
-        </li>
-    </ul>
-</nav>
+    <!-- Navbar -->
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="Home"><img src="img/logo.png" alt="Logo" width="200px;"></a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">História</a></li>
+                    <li><a href="#">Sistemas</a></li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#branchesModal">
+                            Ramificações
+                        </a>
+                    </li>
+                    <li><a href="#">Regiões</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <section class="home">
+    </section>
+
+    <!-- Body -->
+    <div style="height: 1000px">
+        
+    </div>
+
+    <!-- Modal das Ramificações -->
+    <div class="modal fade" id="branchesModal" tabindex="-1" role="dialog" aria-labelledby="branchesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" id="branchesModalContent">
+            <div class="modal-header">
+              <h5 class="modal-title" id="branchesModalLabel">Ramificações</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <i class="fas fa-moon" id="moonLeft"></i>
+                    </div>
+                    <div class="col-sm-8">
+                        <legend>Akas</legend>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Mercenários  </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Bruxos       </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Sanguinários </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Bárbaros     </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Lordes       </button>
+                        <hr>
+                        <legend>Tsukis</legend>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Paladinos    </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Magos        </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Sacerdotes   </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Druidas      </button>
+                        <button type="button" class="btn btn-block" href="#" id="branchButton">Valquírias   </button>
+                    </div>
+                    <div class="col-sm-2">
+                        <i class="far fa-moon" id="moonRight"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal" id="branchButton">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
+
+<script>
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 50) 
+    {
+        $('.nav').addClass('affix');
+        console.log("OK");
+    } 
+    else 
+    {
+        $('.nav').removeClass('affix');
+    }
+    });
+
+    $('.navTrigger').click(function () {
+        $(this).toggleClass('active');
+        console.log("Clicked menu");
+        $("#mainListDiv").toggleClass("show_list");
+        $("#mainListDiv").fadeIn();
+    });
+
+</script>
