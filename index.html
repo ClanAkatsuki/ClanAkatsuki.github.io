@@ -18,10 +18,13 @@
     <!-- CSS -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- Icon -->
+    <link rel="icon" href="img/icon.png">
+
     <!-- Title -->
     <title>Akatsuki</title>
 </head>
-<body>
+<body class="fadeIn">
     <!-- Navbar -->
     <nav class="nav">
         <div class="container">
@@ -50,12 +53,13 @@
 
     <!-- Home -->
     <section class="home">
-    </section>
 
+    </section>
+    
     <!-- Body -->
-    <div style="height: 1000px">
+    <section class="synopsis">
         
-    </div>
+    </section>
 
     <!-- Modal das Ramificações -->
     <div class="modal fade" id="branchesModal" tabindex="-1" role="dialog" aria-labelledby="branchesModalLabel" aria-hidden="true">
@@ -102,6 +106,7 @@
 </html>
 
 <script>
+
     $(window).scroll(function() {
     if ($(document).scrollTop() > 50) 
     {
